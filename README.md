@@ -8,6 +8,7 @@ My personal React Learner note
 
 * [React's Basic Concepts](#reacts-basic-concepts)
   * [React Components](#react-components)
+  * [JSX is NOT HTML](#jsx-is-not-html)
 
 <!-- toc! -->
 
@@ -50,3 +51,28 @@ class MyComponent extends React.Component {
 ==> DOM
 ```
 
+### JSX is NOT HTML
+```javascript
+class Hello extends React.Component {
+  render () {
+    return (
+      <div className="container">
+        <h1>Getting Started</h1>
+      </div>
+    )
+  }
+}
+ReactDOM.render(<Hello/>, mountNode);
+```
+```javascript
+class Hello extends React.Component {
+  render () {
+    return (
+      React.createElement("div", { className: "container" },
+        React.createElement("h1", null, "Getting Started")
+      )
+    );
+  }
+}
+ReactDOM.render(React.createElement(Hello, null), mountNode);
+```
