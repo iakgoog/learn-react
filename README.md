@@ -7,6 +7,7 @@ My personal React Learner note
 <!-- !toc (minlevel=2 omit="Table of Contents") -->
 
 * [React's Basic Concepts](#reacts-basic-concepts)
+  * [React Components](#react-components)
 
 <!-- toc! -->
 
@@ -24,3 +25,28 @@ My personal React Learner note
   - Generate HTML using JavaScript
   - No HTML template language
   - Tree reconcilition
+
+### React Components
+Function Component
+```javascript
+Props ==>
+const MyComponent = (props) => {
+  return (
+    <domElementOrComponent .../>
+  );
+}
+==> DOM
+```
+Class Component
+```javascript
+State ==>
+class MyComponent extends React.Component {
+  render () {
+    return (
+      <domElementOrComponent .../>
+    )
+  }
+}
+==> DOM
+```
+
