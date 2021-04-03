@@ -11,19 +11,13 @@
   <div id="mountNode"></div>
 
   <script type="text/babel">
-
-
     function Button() {
       // a, b = useSate(initialStateValue);
       // useState() results:
       // a) state object (getter)
       // b) updater function (setter)
       const [counter, setCounter] = React.useState(0);
-      return <button onClick={
-        function logRandom() {
-          console.log(Math.ceil(Math.random() * 100)); // random from 1 - 100
-        }
-      }>{counter}</button>;
+      return <button onClick={() => console.log(Math.ceil(Math.random() * 100))}>{counter}</button>;
     }
 
     ReactDOM.render(
