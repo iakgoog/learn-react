@@ -12,8 +12,9 @@
 
   <script type="text/babel">
     function Button(props) {
+      const handleClick = () => props.onClickFunction(props.increment);
       return (
-        <button onClick={props.onClickFunction}>
+        <button onClick={handleClick}>
           +{props.increment}
         </button>
       );
@@ -27,7 +28,7 @@
 
     function App() {
       const [counter, setCounter] = React.useState(42);
-      const incrementCounter = () => setCounter(counter+1);
+      const incrementCounter = (incrementValue) => setCounter(counter + incrementValue);
       return (
         <div>
           <Button onClickFunction={incrementCounter} increment={1} />
