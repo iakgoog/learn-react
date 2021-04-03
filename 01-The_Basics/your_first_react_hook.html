@@ -16,8 +16,8 @@
       // useState() results:
       // a) state object (getter)
       // b) updater function (setter)
-      const [counter, setCounter] = useState();
-      return <button>TEST</button>;
+      const [counter, setCounter] = React.useState(0);
+      return <button>{Math.random()}</button>;
     }
 
     ReactDOM.render(
