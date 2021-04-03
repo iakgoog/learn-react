@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your First React Component</title>
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+  <div id="mountNode"></div>
+  <div id="mountNode2"></div>
+
+  <script type="text/babel">
+    document.getElementById('mountNode').innerHTML = `
+      <div>
+        Hello HTML
+      </div>
+    `;
+
+    ReactDOM.render(
+      React.createElement(
+        "div",
+        null,
+        "Hello React",
+      ),
+      document.getElementById('mountNode2'),
+    );
+  </script>
+</body>
+</html>
