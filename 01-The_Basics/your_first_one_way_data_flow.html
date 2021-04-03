@@ -12,7 +12,7 @@
 
   <script type="text/babel">
     function Button() {
-      const [counter, setCounter] = React.useState(5);
+      const [counter, setCounter] = React.useState(0);
       const handleClick = () => setCounter(counter+1);
       return (
         <button onClick={handleClick}>
@@ -21,8 +21,17 @@
       );
     }
 
+    function Display() {
+      return (
+        <div>...</div>
+      );
+    }
+
     ReactDOM.render(
-      <Button />,
+      <React.Fragment>
+        <Button />
+        <Display />
+      </React.Fragment>,
       document.getElementById('mountNode'),
     );
   </script>
