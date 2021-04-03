@@ -11,27 +11,33 @@
   <div id="mountNode"></div>
 
   <script type="text/babel">
-    function Button() {
-      const [counter, setCounter] = React.useState(0);
-      const handleClick = () => setCounter(counter+1);
+    function Button(props) {
       return (
-        <button onClick={handleClick}>
-          {counter}
+        <button onClick={props.onClickFunction}>
+          +1
         </button>
       );
     }
 
-    function Display() {
+    function Display(props) {
       return (
-        <div>...</div>
+        <div>{props.message}</div>
+      );
+    }
+
+    function App() {
+      const [counter, setCounter] = React.useState(42);
+      const incrementCounter = () => setCounter(counter+1);
+      return (
+        <div>
+          <Button onClickFunction={incrementCounter} />
+          <Display message={counter} />
+        </div>
       );
     }
 
     ReactDOM.render(
-      <React.Fragment>
-        <Button />
-        <Display />
-      </React.Fragment>,
+      <App />,
       document.getElementById('mountNode'),
     );
   </script>
