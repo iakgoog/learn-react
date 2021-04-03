@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your First React Component</title>
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+  <div id="mountNode"></div>
+
+  <script type="text/babel">
+    function logRandom() {
+      console.log(Math.ceil(Math.random() * 100)); // random from 1 - 100
+    }
+
+    function Button() {
+      // a, b = useSate(initialStateValue);
+      // useState() results:
+      // a) state object (getter)
+      // b) updater function (setter)
+      const [counter, setCounter] = React.useState(5);
+      return <button onClick={() => setCounter(counter*2)}>{counter}</button>;
+    }
+
+    ReactDOM.render(
+      <Button />,
+      document.getElementById('mountNode'),
+    );
+  </script>
+</body>
+</html>
