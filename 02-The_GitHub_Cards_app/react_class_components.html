@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Github Cards App</title>
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+  <div id="mountNode"></div>
+
+  <script type="text/babel">
+    class App extends React.Component {
+      render() {
+        return <div className="header">{this.props.title}</div>;
+      }
+    }
+
+    ReactDOM.render(
+      <App title="The Github Cards App" />,
+      mountNode,
+    );
+  </script>
+</body>
+</html>
